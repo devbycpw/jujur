@@ -1,0 +1,1549 @@
+{
+  "retrievedAt": "2026-11-10T15:02:31+00:00",
+  "fiscalYear": 2026,
+  "locationId": "14803",
+  "locationName": "Salatiga (Kota)",
+  "source": {
+    "name": "SIRUP LKPP",
+    "search": "https://sirup.inaproc.id/sirup/caripaketctr/search",
+    "detail": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020",
+    "access": "JSON publik yang dipakai halaman Cari Paket. API Gateway INAPROC memerlukan token instansi dan tidak dipakai."
+  },
+  "counts": {
+    "konstruksiBerlokasiSalatiga": 246,
+    "konstruksiPemerintahKota": 190,
+    "konstruksiPemerintahKotaBertandaApbn": 0,
+    "konstruksiApbnDiWilayahSalatiga": 29
+  },
+  "packages": [
+    {
+      "kodeRup": "64682130",
+      "nama": "Pengadaan Pemeliharaan Gedung tidak bertingkat untuk Kegiatan Operasional dan Pemeliharaan Kantor pada Rutan Kelas IIB Salatiga Jawa Tengah Tahun Anggaran 2026",
+      "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+      "kodeKlpd": "K57",
+      "satker": "PAS13 RUTAN KELAS II B SALATIGA",
+      "pagu": 135129000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Yos Sudarso No.4, Salatiga, Kec. Sidorejo, Kota Salatiga",
+      "uraian": "Pemeliharaan gedung tidak bertingkat ( 1 thn );",
+      "spesifikasi": "Pemeliharaan gedung tidak bertingkat ( 1 thn )",
+      "volume": "( 1 thn )",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "23 Juli 2026 10:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+          "mak": "WA.6172.EBA.994.002.0C.523111",
+          "pagu": 135129000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=64682130",
+      "geocode": {
+        "lat": -7.320517,
+        "lng": 110.501427,
+        "label": "Jalan Yos Sudarso, Sawo, Salatiga, Jawa Tengah",
+        "query": "Jalan Yos Sudarso, Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menulis Jl. Yos Sudarso No. 4. Nomor rumah tidak ada di OpenStreetMap, jadi titik berada di ruas jalan itu."
+      }
+    },
+    {
+      "kodeRup": "67540379",
+      "nama": "Pengadaan Pos Jaga ",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "UIN SALATIGA 423642",
+      "pagu": 398016000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Lingkar Salatiga Km. 2 Salatiga",
+      "uraian": "Ruang Lingkup Pekerjaan di KAK",
+      "spesifikasi": "Spesifikasi di KAK",
+      "volume": "1 Paket Pekerjaan",
+      "pemilihan": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-07-31",
+        "teks": "Juli 2026 – Juli 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-07-31",
+        "teks": "Juli 2026 – Juli 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-12-31",
+        "teks": "Juli 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "21 Juli 2026 16:14",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DK.2132.CBJ.005.052.0H.537113",
+          "pagu": 398016000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67540379",
+      "geocode": {
+        "lat": -7.310182,
+        "lng": 110.478765,
+        "label": "Kampus 3 UIN Salatiga, Jalan Lingkar Salatiga, Pulutan, Salatiga",
+        "query": "Jalan Lingkar Salatiga Km. 2, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat Jalan Lingkar Salatiga Km. 2 cocok dengan Kampus 3 UIN di Jalan Lingkar."
+      }
+    },
+    {
+      "kodeRup": "62513699",
+      "nama": "Pemeliharaan gedung dan halaman",
+      "klpd": "Kementerian Kesehatan",
+      "kodeKlpd": "K9",
+      "satker": "BALAI BESAR LABORATORIUM KESEHATAN LINGKUNGAN",
+      "pagu": 985580000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Hasanudin 123 Salatiga",
+      "uraian": "Belanja Pemeliharaan Gedung dan Bangunan;",
+      "spesifikasi": "Pekerjaan Belanja Pemeliharaan Gedung dan Bangunan meliputi kegiatan pemeliharaan rutin dan/atau perbaikan ringan guna menjaga kondisi bangunan agar tetap berfungsi dengan baik, aman, dan layak digunakan. Pekerjaan mencakup pemeliharaan gedung tidak bertingkat, gedung bertingkat, halaman, serta sumur artesis.",
+      "volume": "1 Paket",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-02-28",
+        "teks": "Januari 2026 – Februari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-12-31",
+        "teks": "Februari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-03-01",
+        "akhir": "2026-12-31",
+        "teks": "Maret 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "09 Januari 2026 16:33",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "WA.4812.EBA.994.002.0E.523111",
+          "pagu": 1211000
+        },
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "WA.4812.EBA.994.002.0E.523111",
+          "pagu": 331546000
+        },
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "WA.4812.EBA.994.002.0E.523111",
+          "pagu": 527823000
+        },
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "WA.4812.EBA.994.002.0E.523111",
+          "pagu": 125000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=62513699",
+      "geocode": {
+        "lat": -7.336959,
+        "lng": 110.497209,
+        "label": "Jalan Hasanuddin, Mangunsari, Salatiga",
+        "query": "Jalan Hasanudin No. 123, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat tertulis Jalan Hasanudin No. 123. Nomor rumah tidak ada di OpenStreetMap, jadi titik berada di ruas Jalan Hasanuddin, bukan di persil nomor 123."
+      }
+    },
+    {
+      "kodeRup": "67471783",
+      "nama": "Pemeliharaan Gedung Tidak Bertingkat (saldo awal)",
+      "klpd": "Kementerian Kesehatan",
+      "kodeKlpd": "K9",
+      "satker": "RS PARU DR ARIO WIRAWAN SALATIGA",
+      "pagu": 466899000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Hasanudin 806 Salatiga",
+      "uraian": "Pemeliharaan Gedung Tidak Bertingkat ( 4533 m2 @ 103000 )",
+      "spesifikasi": "Tercantum dalam spesifikasi teknis, RKS, Gambar",
+      "volume": "4533 m2 @ 103000",
+      "pemilihan": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-08-31",
+        "teks": "Juli 2026 – Agustus 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-09-01",
+        "akhir": "2026-10-31",
+        "teks": "September 2026 – Oktober 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2028-10-31",
+        "teks": "November 2026 – Oktober 2028"
+      },
+      "tanggalUmumkan": "13 Juli 2026 11:26",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "DY.6388.CCB.001.051.51.525114",
+          "pagu": 466899000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67471783",
+      "geocode": {
+        "lat": -7.349974,
+        "lng": 110.489345,
+        "label": "RS Paru dr. Ario Wirawan, 806, Jalan Hasanuddin, Sidomukti, Salatiga",
+        "query": "Jl. Hasanudin 806, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 806 pada pengumuman sama dengan nomor rumah RS Paru dr. Ario Wirawan di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "68293656",
+      "nama": "Pembangunan Wall Climbing",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "UNIVERSITAS ISLAM NEGERI SALATIGA",
+      "pagu": 200000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Lingkar Salatiga Km. 2 Salatiga",
+      "uraian": "Ruang lingkup pekerjaan di KAK",
+      "spesifikasi": "Spesifikasi di KAK",
+      "volume": "1 Paket Pekerjaan",
+      "pemilihan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-12-31",
+        "teks": "Oktober 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 Oktober 2026 08:02",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DK.2132.CBJ.005.052.0K.537113",
+          "pagu": 200000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=68293656",
+      "geocode": {
+        "lat": -7.310182,
+        "lng": 110.478765,
+        "label": "Kampus 3 UIN Salatiga, Jalan Lingkar Salatiga, Pulutan, Salatiga",
+        "query": "Jalan Lingkar Salatiga Km. 2, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat Jalan Lingkar Salatiga Km. 2 cocok dengan Kampus 3 UIN di Jalan Lingkar."
+      }
+    },
+    {
+      "kodeRup": "67936105",
+      "nama": "PRESERVASI JALAN JL. DR. MUWARDI",
+      "klpd": "Kementerian Pekerjaan Umum",
+      "kodeKlpd": "K73",
+      "satker": "693862 / PELAKSANAAN JALAN NASIONAL WILAYAH III PROVINSI JAWA TENGAH",
+      "pagu": 5469227000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "KOTA SALATIGA",
+      "uraian": "PRESERVASI JALAN JL. DR. MUWARDI",
+      "spesifikasi": "sesuai dengan KAK",
+      "volume": "1.05 Kilometer",
+      "pemilihan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-11-30",
+        "teks": "Oktober 2026 – November 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-12-31",
+        "teks": "November 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-12-31",
+        "teks": "November 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "26 September 2026 02:04",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pekerjaan Umum",
+          "mak": "GA.7696.CBR.001.401.AG.521211",
+          "pagu": null
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67936105",
+      "geocode": {
+        "lat": -7.333397,
+        "lng": 110.508998,
+        "label": "Jalan Dokter Muwardi, Asrama Tangsi Bambu, Mrican, Gendongan, Salatiga, Jawa Tengah, 50743, Indonesia",
+        "query": "Jalan Dokter Muwardi, Salatiga",
+        "precision": "jalan",
+        "note": "Titik berada pada ruas jalan yang disebut di nama paket. Pengumuman tidak menulis nomor persil."
+      }
+    },
+    {
+      "kodeRup": "64682117",
+      "nama": "Pengadaan Pemeliharaan Halaman untuk Kegiatan Operasional dan Pemeliharaan Kantor pada Rutan Kelas IIB Salatiga Jawa Tengah Tahun Anggaran 2026",
+      "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+      "kodeKlpd": "K57",
+      "satker": "PAS13 RUTAN KELAS II B SALATIGA",
+      "pagu": 18458000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Yos Sudarso No.4, Salatiga, Kec. Sidorejo, Kota Salatiga",
+      "uraian": "Pemeliharaan Halaman ( 1230, M2, @ 9900 );",
+      "spesifikasi": "Pemeliharaan Halaman ( 1230, M2, @ 9900 );",
+      "volume": "( 1230, M2, @ 9900 )",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "23 Juli 2026 10:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+          "mak": "WA.6172.EBA.994.002.0C.523111",
+          "pagu": 18458000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=64682117",
+      "geocode": {
+        "lat": -7.320517,
+        "lng": 110.501427,
+        "label": "Jalan Yos Sudarso, Sawo, Salatiga, Jawa Tengah",
+        "query": "Jalan Yos Sudarso, Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menulis Jl. Yos Sudarso No. 4. Nomor rumah tidak ada di OpenStreetMap, jadi titik berada di ruas jalan itu."
+      }
+    },
+    {
+      "kodeRup": "68293712",
+      "nama": "Pembangunan Jalan Laboratorium Terpadu UIN Salatiga",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "UNIVERSITAS ISLAM NEGERI SALATIGA",
+      "pagu": 397300000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Lingkar Salatiga Km. 2 Salatiga",
+      "uraian": "Ruang lingkup pekerjaan di KAK",
+      "spesifikasi": "Spesifikasi di KAK",
+      "volume": "1 Paket Pekerjaan",
+      "pemilihan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-12-31",
+        "teks": "Oktober 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 Oktober 2026 08:10",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DK.2132.CBJ.005.052.0J.537113",
+          "pagu": 397300000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=68293712",
+      "geocode": {
+        "lat": -7.310182,
+        "lng": 110.478765,
+        "label": "Kampus 3 UIN Salatiga, Jalan Lingkar Salatiga, Pulutan, Salatiga",
+        "query": "Jalan Lingkar Salatiga Km. 2, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat Jalan Lingkar Salatiga Km. 2 cocok dengan Kampus 3 UIN di Jalan Lingkar."
+      }
+    },
+    {
+      "kodeRup": "62105315",
+      "nama": "Pemeliharaan Gedung/Bangunan Kantor Bertingkat (Jawa  Tengah)",
+      "klpd": "Kementerian Kesehatan",
+      "kodeKlpd": "K9",
+      "satker": "RS PARU DR ARIO WIRAWAN SALATIGA",
+      "pagu": 816560000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Hasanudin 806 Salatiga",
+      "uraian": "1. Pemeliharaan Gedung/Bangunan Kantor Bertingkat (Jawa Tengah) ( 4720, M2, @ 173000 );",
+      "spesifikasi": "Tercantum dalam Spesifikasi Teknis, RKS dan Gambar",
+      "volume": "( 4720, M2, @ 173000 )",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-12-31",
+        "teks": "Februari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-12-31",
+        "teks": "Februari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 Desember 2025 17:08",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "DY.7958.CCB.001.051.0A.525114",
+          "pagu": 816560000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=62105315",
+      "geocode": {
+        "lat": -7.349974,
+        "lng": 110.489345,
+        "label": "RS Paru dr. Ario Wirawan, 806, Jalan Hasanuddin, Sidomukti, Salatiga",
+        "query": "Jl. Hasanudin 806, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 806 pada pengumuman sama dengan nomor rumah RS Paru dr. Ario Wirawan di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "62105332",
+      "nama": "Pemeliharaan Gedung/Bangunan Kantor Tidak Bertingkat (Jawa  Tengah)",
+      "klpd": "Kementerian Kesehatan",
+      "kodeKlpd": "K9",
+      "satker": "RS PARU DR ARIO WIRAWAN SALATIGA",
+      "pagu": 267800000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Hasanudin 806 Salatiga",
+      "uraian": "1. Pemeliharaan Gedung/Bangunan Kantor Tidak Bertingkat (Jawa Tengah) ( 2600, M2, @ 103000 );",
+      "spesifikasi": "Tercantum dalam Spesifikasi Teknis, RKS dan Gambar",
+      "volume": "( 2600, M2, @ 103000 )",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-12-31",
+        "teks": "Februari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-12-31",
+        "teks": "Februari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 Desember 2025 17:09",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Kesehatan",
+          "mak": "DY.7958.CCB.001.051.0A.525114",
+          "pagu": 267800000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=62105332",
+      "geocode": {
+        "lat": -7.349974,
+        "lng": 110.489345,
+        "label": "RS Paru dr. Ario Wirawan, 806, Jalan Hasanuddin, Sidomukti, Salatiga",
+        "query": "Jl. Hasanudin 806, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 806 pada pengumuman sama dengan nomor rumah RS Paru dr. Ario Wirawan di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "64682121",
+      "nama": "Pengadaan Pemeliharaan Gedung Bertingkat untuk Kegiatan Operasional dan Pemeliharaan Kantor pada Rutan Kelas IIB Salatiga Jawa Tengah Tahun Anggaran 2026",
+      "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+      "kodeKlpd": "K57",
+      "satker": "PAS13 RUTAN KELAS II B SALATIGA",
+      "pagu": 92209000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Yos Sudarso No.4, Salatiga, Kec. Sidorejo, Kota Salatiga",
+      "uraian": "Pemeliharaan gedung bertingkat ( 1, THN, @ 92.209.000 );",
+      "spesifikasi": "Pemeliharaan gedung bertingkat ( 1, THN, @ 92.209.000 );",
+      "volume": "( 1, THN, @ 82988000 )",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "23 Juli 2026 10:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Imigrasi dan Pemasyarakatan",
+          "mak": "WA.6172.EBA.994.002.0C.523111",
+          "pagu": 92209000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=64682121",
+      "geocode": {
+        "lat": -7.320517,
+        "lng": 110.501427,
+        "label": "Jalan Yos Sudarso, Sawo, Salatiga, Jawa Tengah",
+        "query": "Jalan Yos Sudarso, Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menulis Jl. Yos Sudarso No. 4. Nomor rumah tidak ada di OpenStreetMap, jadi titik berada di ruas jalan itu."
+      }
+    },
+    {
+      "kodeRup": "65048609",
+      "nama": "Penggantian paving blok",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "MADRASAH TSANAWIYAH NEGERI SALATIGA 308412",
+      "pagu": 100000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "MTsN Salatiga",
+      "uraian": "1. Penggantian paving blok ( 800, m2, @ 125000 );",
+      "spesifikasi": "1. Penggantian paving blok ( 800, m2, @ 125000 );",
+      "volume": "( 800, m2, @ 125000 )",
+      "pemilihan": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-02-28",
+        "teks": "Februari 2026 – Februari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-02-28",
+        "teks": "Februari 2026 – Februari 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-03-01",
+        "akhir": "2026-12-31",
+        "teks": "Maret 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "03 Februari 2026 23:00",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "WA.2135.EBA.994.002.0C.523111",
+          "pagu": 100000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=65048609",
+      "geocode": {
+        "lat": -7.341721,
+        "lng": 110.505304,
+        "label": "MTsN Salatiga, 1, Jalan Jodipati, Mrican, Tegalrejo, Salatiga, Jawa Tengah, 50732, Indonesia",
+        "query": "MTsN Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "64035427",
+      "nama": "5527.EBA.994.002 523111 Belanja Pemeliharaan Gedung dan Bangunan",
+      "klpd": "Kementerian Agraria dan Tata Ruang/BPN",
+      "kodeKlpd": "K38",
+      "satker": "Kantor Pertanahan KOTA SALATIGA",
+      "pagu": 187793000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Imam Bonjol No. 42 Salatiga",
+      "uraian": "1. Biaya Petugas Kebersihan ( 60, OB, @ 2900000 );",
+      "spesifikasi": "KAK",
+      "volume": "1 Paket",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-12-31",
+        "teks": "Januari 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "12 Mei 2026 10:32",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agraria dan Tata Ruang/BPN",
+          "mak": "WA.5527.EBA.994.002.0J.523111",
+          "pagu": 187793000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=64035427",
+      "geocode": {
+        "lat": -7.31978,
+        "lng": 110.491926,
+        "label": "Jalan Imam Bonjol, Gedongan, Salatiga",
+        "query": "Jl. Imam Bonjol No. 42, Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menulis Jl. Imam Bonjol No. 42. Nomor rumah tidak ada di OpenStreetMap, jadi titik berada di ruas jalan itu."
+      }
+    },
+    {
+      "kodeRup": "67045046",
+      "nama": "Belanja Perbaikan Landasan Terminal Tingkir Kota Salatiga",
+      "klpd": "Kementerian Perhubungan",
+      "kodeKlpd": "K26",
+      "satker": "BALAI PENGELOLA TRANSPORTASI DARAT WILAYAH X PROVINSI JAWA TENGAH DAN PROVINSI DI YOGYAKARTA",
+      "pagu": 350000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Terminal Tingkir Kota Salatiga",
+      "uraian": "Melaksanakan Perbaikan Landasan Terminal Tingkir Kota Salatiga",
+      "spesifikasi": "Sesuai dengan dokumen lelang",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-05-31",
+        "teks": "Mei 2026 – Mei 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-07-31",
+        "teks": "Mei 2026 – Juli 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-08-31",
+        "teks": "Juli 2026 – Agustus 2026"
+      },
+      "tanggalUmumkan": "30 April 2026 08:46",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - PNBP (D)",
+          "tahun": "2026",
+          "klpd": "Kementerian Perhubungan",
+          "mak": "GA.4638.CDP.040.051.51.523111",
+          "pagu": 350000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67045046",
+      "geocode": {
+        "lat": -7.362475,
+        "lng": 110.514337,
+        "label": "Terminal Tingkir, Jalan Soekarno-Hatta, Perum Telaga Mukti 2, Jagalan, Cebongan, Salatiga, Jawa Tengah, 50321, Indonesia",
+        "query": "Terminal Tingkir, Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "67759280",
+      "nama": "Pemelihaaran Gedung Kantor Kejaksaan Negeri Salatiga",
+      "klpd": "Kejaksaan Republik Indonesia",
+      "kodeKlpd": "L46",
+      "satker": "KEJAKSAAN TINGGI JAWA TENGAH",
+      "pagu": 181400000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Lingkar Selatan Salatiga, Kelurahan Cebongan, Kecamatan Argomulyo, Kota Salatiga",
+      "uraian": "Pemelihaaran Gedung Kantor Kejaksaan Negeri Salatiga",
+      "spesifikasi": "Sesuai KAK",
+      "volume": "1 Paket",
+      "pemilihan": {
+        "mulai": "2026-09-01",
+        "akhir": "2026-09-30",
+        "teks": "September 2026 – September 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-09-01",
+        "akhir": "2026-12-31",
+        "teks": "September 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-12-01",
+        "akhir": "2026-12-31",
+        "teks": "Desember 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "15 Oktober 2026 08:50",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kejaksaan Republik Indonesia",
+          "mak": "WA.1090.EBA.994.002.02.523111",
+          "pagu": 181400000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67759280",
+      "geocode": {
+        "lat": -7.364242,
+        "lng": 110.508394,
+        "label": "Jalan Lingkar Salatiga, Cebongan, Salatiga",
+        "query": "Jl. Lingkar Selatan, Kelurahan Cebongan, Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menulis Jl. Lingkar Selatan, Kelurahan Cebongan. Titik berada pada ruas Jalan Lingkar di Cebongan."
+      }
+    },
+    {
+      "kodeRup": "64734168",
+      "nama": "Fisik Gedung Kontruksi MTsN Salatiga",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "KANWIL KEMENTERIAN AGAMA PROP JAWA TENGAH 416903",
+      "pagu": 2449436000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Tender",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "MTsN Salatiga",
+      "uraian": "1. Fisik Gedung Kontruksi ( 1, pkt, @ 2449436000 );",
+      "spesifikasi": "Fisik Gedung Kontruksi MTsN Salatiga",
+      "volume": "( 1, pkt, @ 2449436000 )",
+      "pemilihan": {
+        "mulai": "2026-03-01",
+        "akhir": "2026-04-30",
+        "teks": "Maret 2026 – April 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-12-31",
+        "teks": "April 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-12-01",
+        "akhir": "2046-12-31",
+        "teks": "Desember 2026 – Desember 2046"
+      },
+      "tanggalUmumkan": "04 Februari 2026 19:23",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - SBSN (T)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DF.2129.RBI.002.051.0N.533111",
+          "pagu": 2449436000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=64734168",
+      "geocode": {
+        "lat": -7.341721,
+        "lng": 110.505304,
+        "label": "MTsN Salatiga, 1, Jalan Jodipati, Mrican, Tegalrejo, Salatiga, Jawa Tengah, 50732, Indonesia",
+        "query": "MTsN Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "65005732",
+      "nama": "Bangunan Fisik",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "KANTOR KEMENTERIAN AGAMA KOTA SALATIGA 416924",
+      "pagu": 633421000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Tender",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Kantor Kementerian Agama Kota Salatiga",
+      "uraian": "Bangunan Fisik ( 1, LKS, @ 633421000 );",
+      "spesifikasi": "Rehab Gedung dan Bangunan Kantor Kementerian Agama Kota Salatiga",
+      "volume": "( 1, LKS, @ 633421000 )",
+      "pemilihan": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-04-30",
+        "teks": "April 2026 – April 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-12-31",
+        "teks": "April 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-12-31",
+        "teks": "April 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "03 Februari 2026 13:35",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - RUPIAH MURNI (A)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "WA.2103.EBB.971.051.0A.533121",
+          "pagu": 633421000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=65005732",
+      "geocode": {
+        "lat": -7.304093,
+        "lng": 110.487301,
+        "label": "Kementerian Agama Kota Salatiga, Jalan Badak, Bancaan Barat, Salatiga",
+        "query": "Kantor Kementerian Agama Kota Salatiga",
+        "precision": "alamat",
+        "note": "Pengumuman menyebut Kantor Kementerian Agama Kota Salatiga. Titik berada pada kantor itu di Jalan Badak."
+      }
+    },
+    {
+      "kodeRup": "68293609",
+      "nama": "Pembuatan Serambi Masjid",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "UNIVERSITAS ISLAM NEGERI SALATIGA",
+      "pagu": 398016000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Lingkar Salatiga Km. 2 Salatiga",
+      "uraian": "Lingkup pekerjaan di KAK",
+      "spesifikasi": "Spesifikasi di KAK",
+      "volume": "1 Paket Pekerjaan",
+      "pemilihan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-12-31",
+        "teks": "Oktober 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 Oktober 2026 07:58",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DK.2132.CBJ.005.052.0H.537113",
+          "pagu": 398016000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=68293609",
+      "geocode": {
+        "lat": -7.310182,
+        "lng": 110.478765,
+        "label": "Kampus 3 UIN Salatiga, Jalan Lingkar Salatiga, Pulutan, Salatiga",
+        "query": "Jalan Lingkar Salatiga Km. 2, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat Jalan Lingkar Salatiga Km. 2 cocok dengan Kampus 3 UIN di Jalan Lingkar."
+      }
+    },
+    {
+      "kodeRup": "67548527",
+      "nama": "Pemeliharaan Gedung dan Bangunan",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Rumkit Tk IV 040703 dr Asmir Salatiga Dam IV Dip TNI AD",
+      "pagu": 34408000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "JL. DR MUWARDI NO 50, KEC. TINGKIR, SALATIGA",
+      "uraian": "Pemeliharaan Gedung dan Bangunan;",
+      "spesifikasi": "Pekerjaan Kontruksi",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-11-30",
+        "teks": "Februari 2026 – November 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-11-30",
+        "teks": "November 2026 – November 2026"
+      },
+      "tanggalUmumkan": "22 Juli 2026 18:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AC.6507.CCB.001.003",
+          "pagu": 34408000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67548527",
+      "geocode": {
+        "lat": -7.331175,
+        "lng": 110.510562,
+        "label": "RS dr. Asmir Salatiga, 50, Jalan Dokter Muwardi, Gendongan, Salatiga",
+        "query": "Jl. Dokter Muwardi No. 50, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 50 pada pengumuman sama dengan nomor rumah RS dr. Asmir di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "67548551",
+      "nama": "ATR Bangfas",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Rumkit Tk IV 040703 dr Asmir Salatiga Dam IV Dip TNI AD",
+      "pagu": 1602040000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "JL. DR MUWARDI NO 50, KEC. TINGKIR, SALATIGA",
+      "uraian": "ATR Bangfas;",
+      "spesifikasi": "Bangunan dan Fasilitas",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-11-30",
+        "teks": "Februari 2026 – November 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-11-30",
+        "teks": "November 2026 – November 2026"
+      },
+      "tanggalUmumkan": "22 Juli 2026 18:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AC.6507.CAB.001.051",
+          "pagu": 1602040000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67548551",
+      "geocode": {
+        "lat": -7.331175,
+        "lng": 110.510562,
+        "label": "RS dr. Asmir Salatiga, 50, Jalan Dokter Muwardi, Gendongan, Salatiga",
+        "query": "Jl. Dokter Muwardi No. 50, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 50 pada pengumuman sama dengan nomor rumah RS dr. Asmir di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "67548538",
+      "nama": "Har Gedung Perkantoran",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Rumkit Tk IV 040703 dr Asmir Salatiga Dam IV Dip TNI AD",
+      "pagu": 25000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "JL. DR MUWARDI NO 50, KEC. TINGKIR, SALATIGA",
+      "uraian": "Har Gedung Perkantoran;",
+      "spesifikasi": "Har Gedung Perkantoran",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-11-30",
+        "teks": "Februari 2026 – November 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-11-30",
+        "teks": "November 2026 – November 2026"
+      },
+      "tanggalUmumkan": "22 Juli 2026 18:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AF.6510.EBA.994.002",
+          "pagu": 25000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67548538",
+      "geocode": {
+        "lat": -7.331175,
+        "lng": 110.510562,
+        "label": "RS dr. Asmir Salatiga, 50, Jalan Dokter Muwardi, Gendongan, Salatiga",
+        "query": "Jl. Dokter Muwardi No. 50, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 50 pada pengumuman sama dengan nomor rumah RS dr. Asmir di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "66520615",
+      "nama": "BLJ HAR GEDUNG PERKANTORAN",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Korem 073 Makutarama Dam IV Dip TNI AD",
+      "pagu": 30000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Diponegoro No. 28 Salatiga",
+      "uraian": "BLJ HAR GEDUNG PERKANTORAN",
+      "spesifikasi": "BLJ HAR GEDUNG PERKANTORAN",
+      "volume": "1.0 PAKET",
+      "pemilihan": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-03-31",
+        "teks": "Februari 2026 – Maret 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-12-31",
+        "teks": "April 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-12-01",
+        "akhir": "2026-12-31",
+        "teks": "Desember 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "16 Maret 2026 16:09",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AB.6512.BHA.001.003.AF.6510.EBA.994.002.JA.523111",
+          "pagu": 30000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=66520615",
+      "geocode": {
+        "lat": -7.322323,
+        "lng": 110.502,
+        "label": "Korem 073 Makutarama, Salatiga",
+        "query": "Korem 073 Makutarama, Jl. Diponegoro, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat tertulis Jl. Diponegoro No. 28 dan satuan kerjanya Korem 073. Titik berada pada area Korem, bukan pada nomor rumah."
+      }
+    },
+    {
+      "kodeRup": "67935937",
+      "nama": "Har Gedung Perkantoran",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Rumkit Tk. IV 04.07.03 dr. Asmir Salatiga Kesdam IV/Dip",
+      "pagu": 25000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "JL. DR MUWARDI NO 50, KEC. TINGKIR, SALATIGA",
+      "uraian": "Har Gedung Perkantoran;",
+      "spesifikasi": "Har Gedung Perkantoran",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-11-30",
+        "teks": "Februari 2026 – November 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-11-30",
+        "teks": "November 2026 – November 2026"
+      },
+      "tanggalUmumkan": "25 September 2026 23:36",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AF.6510.EBA.994.002.JA.523111",
+          "pagu": 25000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67935937",
+      "geocode": {
+        "lat": -7.331175,
+        "lng": 110.510562,
+        "label": "RS dr. Asmir Salatiga, 50, Jalan Dokter Muwardi, Gendongan, Salatiga",
+        "query": "Jl. Dokter Muwardi No. 50, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 50 pada pengumuman sama dengan nomor rumah RS dr. Asmir di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "62628505",
+      "nama": "HARWAT GEDUNG KANTOR DAN HALAMAN POLRES SALATIGA T.A. 2026",
+      "klpd": "Kepolisian Negara Republik Indonesia",
+      "kodeKlpd": "L47",
+      "satker": "POLRES SALATIGA POLDA JATENG",
+      "pagu": 220781000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "POLRES SALATIGA",
+      "uraian": "Harwat gedung mako dan halaman ; pemeliharaan gedung pelayanan Sim",
+      "spesifikasi": "Spesifikasi sesuai KAK",
+      "volume": "1 PAKET",
+      "pemilihan": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-05-31",
+        "teks": "April 2026 – Mei 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-05-31",
+        "teks": "Mei 2026 – Mei 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-05-31",
+        "teks": "Mei 2026 – Mei 2026"
+      },
+      "tanggalUmumkan": "31 Desember 2025 06:20",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kepolisian Negara Republik Indonesia",
+          "mak": "WA.3073.EBA.962.003.LO.523111",
+          "pagu": 220781000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=62628505",
+      "geocode": {
+        "lat": -7.328789,
+        "lng": 110.500004,
+        "label": "Polres Salatiga, 1, Jalan Laksda. Adi Sucipto, Kebonsari, Kalicacing, Salatiga, Jawa Tengah, 50724, Indonesia",
+        "query": "Polres Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "67752746",
+      "nama": "HARWAT GEDUNG KANTOR DAN HALAMAN POLRES SALATIGA TA 2026 (TAMBAHAN)",
+      "klpd": "Kepolisian Negara Republik Indonesia",
+      "kodeKlpd": "L47",
+      "satker": "POLRES SALATIGA",
+      "pagu": 50000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "POLRES SALATIGA",
+      "uraian": "ruang lingkup pekerjaan di KAK",
+      "spesifikasi": "SPEK DI KAK",
+      "volume": "1 PAKET",
+      "pemilihan": {
+        "mulai": "2026-09-01",
+        "akhir": "2026-10-31",
+        "teks": "September 2026 – Oktober 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-10-01",
+        "akhir": "2026-10-31",
+        "teks": "Oktober 2026 – Oktober 2026"
+      },
+      "tanggalUmumkan": "02 September 2026 21:32",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kepolisian Negara Republik Indonesia",
+          "mak": "BQ.3128.EBA.962.003.JH.523111",
+          "pagu": 50000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67752746",
+      "geocode": {
+        "lat": -7.328789,
+        "lng": 110.500004,
+        "label": "Polres Salatiga, 1, Jalan Laksda. Adi Sucipto, Kebonsari, Kalicacing, Salatiga, Jawa Tengah, 50724, Indonesia",
+        "query": "Polres Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "62628506",
+      "nama": "HARWAT GEDUNG KANTOR DAN HALAMAN POLSEK JAJARAN POLRES SALATIGA T.A. 2026",
+      "klpd": "Kepolisian Negara Republik Indonesia",
+      "kodeKlpd": "L47",
+      "satker": "POLRES SALATIGA POLDA JATENG",
+      "pagu": 75920000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Pengadaan Langsung",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "POLRES SALATIGA",
+      "uraian": "Harwat polsek jajaran Polres Salatiga",
+      "spesifikasi": "Spesifikasi di KAK",
+      "volume": "1 PAKET",
+      "pemilihan": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-05-31",
+        "teks": "April 2026 – Mei 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-05-31",
+        "teks": "Mei 2026 – Mei 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-05-01",
+        "akhir": "2026-05-31",
+        "teks": "Mei 2026 – Mei 2026"
+      },
+      "tanggalUmumkan": "31 Desember 2025 06:20",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kepolisian Negara Republik Indonesia",
+          "mak": "WA.3073.EBA.994.002.LP.523111",
+          "pagu": 75920000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=62628506",
+      "geocode": {
+        "lat": -7.328789,
+        "lng": 110.500004,
+        "label": "Polres Salatiga, 1, Jalan Laksda. Adi Sucipto, Kebonsari, Kalicacing, Salatiga, Jawa Tengah, 50724, Indonesia",
+        "query": "Polres Salatiga, Jawa Tengah",
+        "precision": "objek",
+        "note": "Titik berada pada fasilitas yang namanya tertulis di pengumuman."
+      }
+    },
+    {
+      "kodeRup": "67548580",
+      "nama": "Pemeliharaan Gedung dan Bangunan",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "Rumkit Tk IV 040703 dr Asmir Salatiga Dam IV Dip TNI AD",
+      "pagu": 34408000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "JL. DR MUWARDI NO 50, KEC. TINGKIR, SALATIGA",
+      "uraian": "Pemeliharaan Gedung dan Bangunan;",
+      "spesifikasi": "Pemeliharaan Gedung dan Bangunan",
+      "volume": "1",
+      "pemilihan": {
+        "mulai": "2026-01-01",
+        "akhir": "2026-01-31",
+        "teks": "Januari 2026 – Januari 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-11-30",
+        "teks": "Februari 2026 – November 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-11-01",
+        "akhir": "2026-11-30",
+        "teks": "November 2026 – November 2026"
+      },
+      "tanggalUmumkan": "22 Juli 2026 18:52",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AC.6507.CCB.001.003",
+          "pagu": 34408000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67548580",
+      "geocode": {
+        "lat": -7.331175,
+        "lng": 110.510562,
+        "label": "RS dr. Asmir Salatiga, 50, Jalan Dokter Muwardi, Gendongan, Salatiga",
+        "query": "Jl. Dokter Muwardi No. 50, Salatiga",
+        "precision": "alamat",
+        "note": "Nomor 50 pada pengumuman sama dengan nomor rumah RS dr. Asmir di OpenStreetMap."
+      }
+    },
+    {
+      "kodeRup": "67428714",
+      "nama": "Pembangunan Gedung UKM UIN Salatiga Tahun 2026",
+      "klpd": "Kementerian Agama",
+      "kodeKlpd": "K1",
+      "satker": "UIN SALATIGA 423642",
+      "pagu": 19000500000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "Tender",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jalan Lingkar Salatiga Km. 02 Salatiga",
+      "uraian": "Sesuai yang tercantum dalam KAK",
+      "spesifikasi": "Spesifikasi Teknis di KAK",
+      "volume": "1 Paket Pekerjaan",
+      "pemilihan": {
+        "mulai": "2026-07-01",
+        "akhir": "2026-08-31",
+        "teks": "Juli 2026 – Agustus 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-08-01",
+        "akhir": "2026-12-31",
+        "teks": "Agustus 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2027-01-01",
+        "akhir": "2037-12-31",
+        "teks": "Januari 2027 – Desember 2037"
+      },
+      "tanggalUmumkan": "06 Juli 2026 15:02",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN - BADAN LAYANAN UMUM (F)",
+          "tahun": "2026",
+          "klpd": "Kementerian Agama",
+          "mak": "DK.2132.CBJ.005.052.AA.537113",
+          "pagu": 19000500000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=67428714",
+      "geocode": {
+        "lat": -7.310182,
+        "lng": 110.478765,
+        "label": "Kampus 3 UIN Salatiga, Jalan Lingkar Salatiga, Pulutan, Salatiga",
+        "query": "Jalan Lingkar Salatiga Km. 2, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat Jalan Lingkar Salatiga Km. 2 cocok dengan Kampus 3 UIN di Jalan Lingkar."
+      }
+    },
+    {
+      "kodeRup": "66952542",
+      "nama": "BLJ HAR GEDUNG PERKANTORAN",
+      "klpd": "Kementerian Pertahanan",
+      "kodeKlpd": "K28",
+      "satker": "KOREM-073/MKT DAM IV/DIP",
+      "pagu": 30000000,
+      "sumberDana": [
+        "APBN"
+      ],
+      "jenis": "Pekerjaan Konstruksi",
+      "metode": "E-Purchasing",
+      "lokasi": "Jawa Tengah, Salatiga (Kota)",
+      "detailLokasi": "Jl. Diponegoro No. 28 Salatiga",
+      "uraian": "BLJ HAR GEDUNG PERKANTORAN",
+      "spesifikasi": "BLJ HAR GEDUNG PERKANTORAN",
+      "volume": "1.0 PAKET",
+      "pemilihan": {
+        "mulai": "2026-02-01",
+        "akhir": "2026-03-31",
+        "teks": "Februari 2026 – Maret 2026"
+      },
+      "kontrak": {
+        "mulai": "2026-04-01",
+        "akhir": "2026-12-31",
+        "teks": "April 2026 – Desember 2026"
+      },
+      "pemanfaatan": {
+        "mulai": "2026-12-01",
+        "akhir": "2026-12-31",
+        "teks": "Desember 2026 – Desember 2026"
+      },
+      "tanggalUmumkan": "17 September 2026 18:51",
+      "sumberDanaRinci": [
+        {
+          "sumber": "APBN",
+          "tahun": "2026",
+          "klpd": "Kementerian Pertahanan",
+          "mak": "AF.6510.EBA.994.002.AF.6510.EBA.994.002",
+          "pagu": 30000000
+        }
+      ],
+      "sumberUrl": "https://sirup.inaproc.id/sirup/rup/detailPaketPenyedia2020?idPaket=66952542",
+      "geocode": {
+        "lat": -7.322323,
+        "lng": 110.502,
+        "label": "Korem 073 Makutarama, Salatiga",
+        "query": "Korem 073 Makutarama, Jl. Diponegoro, Salatiga",
+        "precision": "alamat",
+        "note": "Alamat tertulis Jl. Diponegoro No. 28 dan satuan kerjanya Korem 073. Titik berada pada area Korem, bukan pada nomor rumah."
+      }
+    }
+  ]
+}

@@ -88,9 +88,9 @@ body{font-weight:500}
 .brand strong{font-size:15px;line-height:1.05}
 .topbar nav{justify-content:flex-start;margin-left:12px}.topbar nav button{font-size:12px;padding:9px 13px;max-width:none}
 .user{margin-left:auto;min-width:0}
-.project-list{top:112px;left:18px;width:280px;border-radius:15px;box-shadow:0 8px 24px #20344b1b}
-.list-search{height:40px}.pills{padding:7px;gap:4px}.pills button{padding:6px 8px;font-size:9px}.results{max-height:155px}.result{padding:8px 10px}
+.project-list{top:112px;left:18px;bottom:18px;width:320px;display:flex;flex-direction:column;border-radius:15px;box-shadow:0 8px 24px #20344b1b}
+.list-search{height:40px;flex:none}.pills{padding:7px;gap:4px;flex:none}.pills button{padding:6px 8px;font-size:9px}.gate-note{flex:none;margin:0 10px 8px;color:#526176;font-size:11px;line-height:1.45}.results{flex:1;max-height:none;overflow:auto}.result{padding:8px 10px}.result strong{white-space:nowrap}.gallery-empty{margin:0 0 8px;color:#526176;font-size:13px;line-height:1.5}
 .panel{top:108px;right:28px;width:min(650px,48vw)}
 .transparency{left:18px;width:280px;padding:13px 15px}.rail{right:8px}
 @media(max-width:1000px){.project-list{width:250px}.panel{right:16px;width:58vw}.transparency{width:250px}.topbar{height:68px}}
-@media(max-width:700px){.topbar{height:60px}.project-list{display:block;top:auto;bottom:calc(40% + 14px);left:10px;width:calc(100% - 20px)}.results{display:none}.pills{border:0}.panel{top:68px;bottom:calc(40% + 78px);left:2%;right:2%;width:96%}.map{top:60%;height:40%}.map-pin{font-size:0;transform:scale(.8)}.map-pin span{display:none}.map-pin.active{font-size:9px;transform:scale(.9)}.map-pin.active span{display:flex}.map-pin.main{left:38%;top:45%}.map-pin.market{left:20%;top:25%}.map-pin.pustu{left:8%;top:52%}.map-pin.drain{left:47%;top:74%}.map-pin.junction{left:68%;top:65%}}
+@media(max-width:700px){.topbar{height:60px}.project-list{display:block;top:auto;bottom:calc(40% + 14px);left:10px;width:calc(100% - 20px)}.results{display:block;max-height:140px;overflow:auto}.pills{border:0}.panel{top:68px;bottom:calc(40% + 78px);left:2%;right:2%;width:96%}.map{top:60%;height:40%}.map-pin{font-size:0;transform:scale(.8)}.map-pin span{display:none}.map-pin.active{font-size:9px;transform:scale(.9)}.map-pin.active span{display:flex}.map-pin.main{left:38%;top:45%}.map-pin.market{left:20%;top:25%}.map-pin.pustu{left:8%;top:52%}.map-pin.drain{left:47%;top:74%}.map-pin.junction{left:68%;top:65%}}
