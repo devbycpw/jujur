@@ -1,5 +1,5 @@
 import { buildLiveSummary, gateSummary, projectsFrom, publicProjects, type GateInput } from "@/app/data-gate";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseRead } from "@/lib/supabase-admin";
 import { rupYear } from "@/lib/rup-sync";
 
 type PackageRow = {
@@ -62,8 +62,8 @@ function toInput(row: PackageRow): GateInput {
 }
 
 export async function readPackages() {
-  const db = supabaseAdmin();
-  if (!db) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "SUPABASE_URL atau SUPABASE_SECRET_KEY belum terbaca." };
+  const db = supabaseRead();
+  if (!db) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "URL atau kunci Supabase belum terbaca." };
   const { data, error } = await db.from("rup_packages").select("*").eq("tahun", rupYear()).order("pagu", { ascending: false }).limit(5000);
   if (error) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: error.message };
   if (!data?.length) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "Supabase tersambung, tetapi tabel paket masih kosong. Tekan Perbarui data setelah tabel dibuat." };

@@ -64,6 +64,7 @@ create table if not exists public.sync_runs (
 );
 
 alter table public.rup_packages enable row level security;
+alter table public.location_cursors enable row level security;
 alter table public.sync_state enable row level security;
 alter table public.sync_runs enable row level security;
 

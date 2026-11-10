@@ -7,7 +7,7 @@ export const maxDuration = 300;
 
 export async function POST() {
   const db = supabaseAdmin();
-  if (!db) return Response.json({ error: "Kunci Supabase belum terbaca di server." }, { status: 503 });
+  if (!db) return Response.json({ error: "SUPABASE_SECRET_KEY belum diisi. Kunci publishable hanya boleh membaca." }, { status: 503 });
   try {
     const sync = await syncRup(db);
     const payload = await readPackages();
