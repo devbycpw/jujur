@@ -9,6 +9,7 @@ import AdminDashboard, { AdminProjectDetailActions } from "./AdminDashboard";
 import type { AdminProject } from "./AdminDashboard";
 import ProjectGallery from "./ProjectGallery";
 import { formatCompact, gateSummary, publicProjects } from "./data-gate";
+import { getSupabaseClient } from "@/lib/supabase-client";
 
 const cats = ["Semua","Jalan","Gedung","Lainnya"] as const;
 type Project = AdminProject;
@@ -16,14 +17,73 @@ type Project = AdminProject;
 export default function Home() {
  const [projects,setProjects]=useState<AdminProject[]>(publicProjects),[summary,setSummary]=useState(gateSummary),[refreshing,setRefreshing]=useState(false),[selectedId,setSelectedId]=useState(""),[showDetail,setShowDetail]=useState(false),[detailClosing,setDetailClosing]=useState(false),[detailVersion,setDetailVersion]=useState(0),[photoPreview,setPhotoPreview]=useState(""),[photoUpdated,setPhotoUpdated]=useState(""),[mapStyle,setMapStyle]=useState("standard"),[category,setCategory]=useState("Semua"),[query,setQuery]=useState(""),[tab,setTab]=useState("Rincian & Foto"),[watching,setWatching]=useState(false),[notice,setNotice]=useState(""),[welcome,setWelcome]=useState<{title:string;subtitle:string}|null>(null),[zoom,setZoom]=useState(1),[mobileMenu,setMobileMenu]=useState(false),[activeNav,setActiveNav]=useState("Peta Pembangunan"),[page,setPage]=useState("Peta Pembangunan"),[profileOpen,setProfileOpen]=useState(false),[showIdentity,setShowIdentity]=useState(false),[loading,setLoading]=useState(false),[isLoggedIn,setIsLoggedIn]=useState(false),[accountName,setAccountName]=useState("Siti Wulandari"),[role,setRole]=useState<"warga"|"admin">("warga"),[showAuth,setShowAuth]=useState(false),[authMode,setAuthMode]=useState<"signin"|"signup">("signin");
  useEffect(()=>{setWelcome({title:"Selamat Datang di APERTIO",subtitle:"Lebih Jujur, Lebih Transparan"});const timer=window.setTimeout(()=>setWelcome(null),2000);return()=>window.clearTimeout(timer)},[]);
- useEffect(()=>{let stop=false;fetch("/api/packages").then(response=>response.json()).then(data=>{if(stop||data.source!=="supabase"||!Array.isArray(data.projects))return;setProjects(data.projects);if(data.summary)setSummary(data.summary)}).catch(()=>{});return()=>{stop=true}},[]);
+ 
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session?.user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("full_name, role")
+          .eq("id", session.user.id)
+          .maybeSingle();
+
+        const name = profile?.full_name || session.user.user_metadata?.full_name || session.user.email?.split("@")[0] || "Warga";
+        const userRole = (profile?.role === "admin" ? "admin" : "warga") as "warga" | "admin";
+        setAccountName(name);
+        setRole(userRole);
+        setIsLoggedIn(true);
+      }
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (session?.user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("full_name, role")
+          .eq("id", session.user.id)
+          .maybeSingle();
+
+        const name = profile?.full_name || session.user.user_metadata?.full_name || session.user.email?.split("@")[0] || "Warga";
+        const userRole = (profile?.role === "admin" ? "admin" : "warga") as "warga" | "admin";
+        setAccountName(name);
+        setRole(userRole);
+        setIsLoggedIn(true);
+      } else if (event === "SIGNED_OUT") {
+        setIsLoggedIn(false);
+        setRole("warga");
+        setAccountName("Warga Salatiga");
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+  useEffect(()=>{let stop=false;fetch("/api/packages").then(response=>response.json()).then(data=>{if(stop||data.source!=="supabase"||!Array.isArray(data.projects))return;setProjects(data.projects);if(data.summary)setSummary(data.summary)}).catch(()=>{});return()=>{stop=true}},[]);
  const project:Project=projects.find(p=>p.id===selectedId)??projects[0];
  const filtered=useMemo(()=>projects.filter(p=>(category==="Semua"||p.type===category)&&(p.short+" "+p.title+" "+p.agency).toLowerCase().includes(query.toLowerCase())),[projects,category,query]);
  function toast(s:string){setNotice(s);window.setTimeout(()=>setNotice(""),2500)}
  async function refreshPackages(){if(refreshing)return;setRefreshing(true);try{const response=await fetch("/api/packages/refresh",{method:"POST"});const data=await response.json();if(!response.ok){toast(data.error||"Gagal memperbarui");return}if(Array.isArray(data.projects)&&data.projects.length)setProjects(data.projects);if(data.summary)setSummary(data.summary);toast(data.added?data.added+" paket baru disimpan di Supabase":"Tidak ada paket baru. Yang tersimpan di Supabase tetap dipakai.")}catch{toast("Tidak terhubung ke server")}finally{setRefreshing(false)}}
  function hideDetail(){if(!showDetail||detailClosing)return;setDetailClosing(true);window.setTimeout(()=>{setShowDetail(false);setDetailClosing(false)},280)}
  function navigate(next:string){if(next==="Login"){setAuthMode("signin");setShowAuth(true);setMobileMenu(false);return}if(next===page)return;setLoading(true);setPage(next);setActiveNav(role==="admin"&&["Manajemen Proyek","Daftar Proyek","Statistik","Data Publik","Laporan Warga"].includes(next)?"Manajemen Proyek":next);setMobileMenu(false);window.setTimeout(()=>setLoading(false),420)}
- function login(name:string,email:string,accountRole:"warga"|"admin"){setAccountName(name);setRole(accountRole);setIsLoggedIn(true);setShowAuth(false);setPage("Peta Pembangunan");setActiveNav("Peta Pembangunan");setWelcome({title:accountRole==="admin"?"Selamat datang, Admin":"Halo, selamat datang "+name,subtitle:accountRole==="admin"?"Ruang kendali pembangunan APERTIO":"Terus awasi pembangunan Kota Salatiga"});window.setTimeout(()=>setWelcome(null),2000)}
+ 
+  async function handleLogout() {
+    setProfileOpen(false);
+    const supabase = getSupabaseClient();
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
+    setIsLoggedIn(false);
+    setRole("warga");
+    setAccountName("Warga Salatiga");
+    setPage("Peta Pembangunan");
+    setActiveNav("Peta Pembangunan");
+    toast("Anda telah berhasil keluar");
+  }
+  function login(name:string,email:string,accountRole:"warga"|"admin"){setAccountName(name);setRole(accountRole);setIsLoggedIn(true);setShowAuth(false);setPage("Peta Pembangunan");setActiveNav("Peta Pembangunan");setWelcome({title:accountRole==="admin"?"Selamat datang, Admin":"Halo, selamat datang "+name,subtitle:accountRole==="admin"?"Ruang kendali pembangunan APERTIO":"Terus awasi pembangunan Kota Salatiga"});window.setTimeout(()=>setWelcome(null),2000)}
  return <main className={"app "+(page!=="Peta Pembangunan"?"page-mode":"")}>
   <header className="topbar">
    <button className="mobile-menu" onClick={()=>setMobileMenu(!mobileMenu)}><Menu size={20}/></button>
@@ -34,7 +94,7 @@ export default function Home() {
    <button className="export-button refresh-data" disabled={refreshing} onClick={refreshPackages}>{refreshing?"Memeriksa SIRUP…":"Perbarui data"}</button>
    {isLoggedIn ? <div className="profile-wrap">
     <button className="user" onClick={()=>setProfileOpen(!profileOpen)}><div className="avatar"><img src="https://i.pravatar.cc/100?img=11" alt={"Foto profil "+accountName}/><i/></div><div><b>{accountName}</b><small>{role==="admin"?"Admin":"Warga"}</small></div><ChevronRight size={15}/></button>
-    {profileOpen&&<div className="profile-menu"><div className="profile-menu-head"><div className="avatar"><img src="https://i.pravatar.cc/100?img=11" alt={"Foto profil "+accountName}/></div><span><b>{accountName}</b><small>{role==="admin"?"Admin APERTIO":"Warga · Salatiga"}</small></span></div><button onClick={()=>{setProfileOpen(false);setShowIdentity(true)}}><ShieldCheck size={16}/> Cek data diri</button><button className="logout" onClick={()=>{setProfileOpen(false);setIsLoggedIn(false);setRole("warga");setPage("Peta Pembangunan");setActiveNav("Peta Pembangunan");toast("Anda telah keluar dari sesi demo")}}><X size={16}/> Keluar</button></div>}
+    {profileOpen&&<div className="profile-menu"><div className="profile-menu-head"><div className="avatar"><img src="https://i.pravatar.cc/100?img=11" alt={"Foto profil "+accountName}/></div><span><b>{accountName}</b><small>{role==="admin"?"Admin APERTIO":"Warga · Salatiga"}</small></span></div><button onClick={()=>{setProfileOpen(false);setShowIdentity(true)}}><ShieldCheck size={16}/> Cek data diri</button><button className="logout" onClick={handleLogout}><X size={16}/> Keluar</button></div>}
    </div> : <div className="auth-buttons"><button onClick={()=>{setAuthMode("signin");setShowAuth(true)}}>Sign in</button><button onClick={()=>{setAuthMode("signup");setShowAuth(true)}}>Sign up</button></div>}
   </header>
   {page==="Peta Pembangunan"?<>
