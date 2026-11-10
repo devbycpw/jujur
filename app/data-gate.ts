@@ -1,11 +1,29 @@
 import type { AdminProject } from "./AdminDashboard";
 import snapshot from "../data/public/salatiga-apbn-2026.json";
 
-const BBOX = { south: -7.42, north: -7.26, west: 110.42, east: 110.57 };
-const AS_OF = snapshot.retrievedAt.slice(0, 10);
+const BBOX = { south: -8.08, north: -6.4, west: 108.4, east: 111.75 };
 
-type Span = { mulai: string | null; akhir: string | null; teks: string } | null;
-type PackageRecord = (typeof snapshot.packages)[number];
+export type Span = { mulai: string | null; akhir: string | null; teks: string } | null;
+export type GateInput = {
+  kodeRup: string;
+  nama: string;
+  klpd: string;
+  satker: string;
+  pagu: number;
+  sumberDana: string[];
+  lokasi: string;
+  detailLokasi: string;
+  uraian: string;
+  volume: string;
+  metode: string;
+  tanggalUmumkan: string;
+  pemilihan: Span;
+  kontrak: Span;
+  sumberUrl: string;
+  geocode: { lat: number; lng: number; label: string; precision: string; note?: string } | null;
+  sumberDanaRinci?: { sumber: string }[];
+  retrievedAt?: string;
+};
 
 export function formatRupiah(value: number) {
   return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
@@ -21,12 +39,12 @@ function covers(span: Span, day: string) {
   return Boolean(span?.mulai && span.akhir && day >= span.mulai && day <= span.akhir);
 }
 
-function scheduleStatus(item: PackageRecord) {
-  if (covers(item.kontrak, AS_OF)) return "Di dalam jadwal kontrak";
-  if (covers(item.pemilihan, AS_OF)) return "Tahap pemilihan penyedia";
-  if (item.kontrak?.mulai && AS_OF < item.kontrak.mulai) return "Menunggu jadwal kontrak";
-  if (item.pemilihan?.mulai && AS_OF < item.pemilihan.mulai) return "Belum masuk jadwal pemilihan";
-  if (item.kontrak?.akhir && AS_OF > item.kontrak.akhir) return "Jadwal kontrak sudah lewat";
+function scheduleStatus(item: GateInput, asOf: string) {
+  if (covers(item.kontrak, asOf)) return "Di dalam jadwal kontrak";
+  if (covers(item.pemilihan, asOf)) return "Tahap pemilihan penyedia";
+  if (item.kontrak?.mulai && asOf < item.kontrak.mulai) return "Menunggu jadwal kontrak";
+  if (item.pemilihan?.mulai && asOf < item.pemilihan.mulai) return "Belum masuk jadwal pemilihan";
+  if (item.kontrak?.akhir && asOf > item.kontrak.akhir) return "Jadwal kontrak sudah lewat";
   return "Jadwal tidak lengkap";
 }
 
@@ -44,25 +62,31 @@ function shortName(name: string) {
   return `${cut || clean.slice(0, 49)}…`;
 }
 
-function insideSalatiga(lat: number, lng: number) {
+function insideJateng(lat: number, lng: number) {
   return lat >= BBOX.south && lat <= BBOX.north && lng >= BBOX.west && lng <= BBOX.east;
 }
 
-function accept(item: PackageRecord) {
+function labelInJateng(label: string) {
+  const text = label.toLowerCase();
+  return !text.includes("jawa barat") && !text.includes("jawa timur") && !text.includes("yogyakarta");
+}
+
+function accept(item: GateInput) {
   const reasons: string[] = [];
+  const tempat = item.lokasi.toLowerCase();
   if (!/^\d+$/.test(item.kodeRup)) reasons.push("Kode RUP tidak valid");
   if (!item.sumberDana.some((source) => source.toUpperCase().includes("APBN"))) reasons.push("Sumber dana bukan APBN");
-  if (!item.lokasi.toLowerCase().includes("salatiga")) reasons.push("Lokasi pengumuman bukan Salatiga");
+  if (!tempat.includes("jawa tengah") && !tempat.includes("salatiga")) reasons.push("Lokasi pengumuman di luar Jawa Tengah");
   if (!Number.isInteger(item.pagu) || item.pagu <= 0) reasons.push("Pagu tidak valid");
   if (!item.klpd || !item.nama || !item.sumberUrl) reasons.push("Identitas paket tidak lengkap");
-  if (item.sumberDanaRinci.length && item.sumberDanaRinci.every((line) => !line.sumber.toUpperCase().includes("APBN"))) reasons.push("Rincian sumber dana tidak memuat APBN");
+  if (item.sumberDanaRinci?.length && item.sumberDanaRinci.every((line) => !line.sumber.toUpperCase().includes("APBN"))) reasons.push("Rincian sumber dana tidak memuat APBN");
   const geo = item.geocode;
   const precise = geo?.precision === "jalan" || geo?.precision === "objek" || geo?.precision === "alamat";
-  const geoOk = Boolean(geo && precise && geo.label.toLowerCase().includes("salatiga") && insideSalatiga(geo.lat, geo.lng));
+  const geoOk = Boolean(geo && precise && labelInJateng(geo.label) && insideJateng(geo.lat, geo.lng));
   return { accepted: reasons.length === 0, reasons, geoOk };
 }
 
-function toProject(item: PackageRecord, lat?: number, lng?: number, shifted = false): AdminProject {
+function toProject(item: GateInput, asOf: string, lat?: number, lng?: number, shifted = false): AdminProject {
   const kind = classify(item.nama);
   const geo = item.geocode;
   const mappable = lat !== undefined && lng !== undefined;
@@ -76,7 +100,7 @@ function toProject(item: PackageRecord, lat?: number, lng?: number, shifted = fa
     short: shortName(item.nama),
     category: kind.category,
     type: kind.type,
-    status: scheduleStatus(item),
+    status: scheduleStatus(item, asOf),
     progress: 0,
     plan: 0,
     progressKnown: false,
@@ -84,7 +108,7 @@ function toProject(item: PackageRecord, lat?: number, lng?: number, shifted = fa
     paguValue: item.pagu,
     contract: "Belum diumumkan",
     contractKnown: false,
-    district: "Salatiga",
+    district: item.lokasi.replace(/^Jawa Tengah,\s*/i, "") || "Jawa Tengah",
     date: item.kontrak?.teks || "Jadwal kontrak tidak tercantum",
     location: mappable && geo ? `Alamat pengumuman: ${item.detailLokasi}. Cocok dengan ${geo.label}. ${placeNote}${shiftNote}` : `${item.detailLokasi}. ${placeNote}`,
     agency: item.klpd,
@@ -99,37 +123,75 @@ function toProject(item: PackageRecord, lat?: number, lng?: number, shifted = fa
     mappable,
     sourceUrl: item.sumberUrl,
     sourceLabel: "SIRUP LKPP",
-    retrievedAt: snapshot.retrievedAt,
+    retrievedAt: item.retrievedAt || snapshot.retrievedAt,
   };
 }
 
-const seenPlaces = new Map<string, number>();
-const decided = snapshot.packages.map((item) => ({ item, gate: accept(item) }));
-const rejected = decided.filter((entry) => !entry.gate.accepted);
+export function projectsFrom(records: GateInput[], asOf: string) {
+  const seenPlaces = new Map<string, number>();
+  return records.flatMap((item) => {
+    const gate = accept(item);
+    if (!gate.accepted) return [];
+    if (!gate.geoOk || !item.geocode) return [toProject(item, asOf)];
+    const key = `${item.geocode.lat.toFixed(5)},${item.geocode.lng.toFixed(5)}`;
+    const seen = seenPlaces.get(key) ?? 0;
+    seenPlaces.set(key, seen + 1);
+    return [toProject(item, asOf, item.geocode.lat, item.geocode.lng + seen * 0.00022, seen > 0)];
+  });
+}
 
-export const publicProjects: AdminProject[] = decided.filter((entry) => entry.gate.accepted).map(({ item, gate }) => {
-  if (!gate.geoOk || !item.geocode) return toProject(item);
-  const key = `${item.geocode.lat.toFixed(5)},${item.geocode.lng.toFixed(5)}`;
-  const seen = seenPlaces.get(key) ?? 0;
-  seenPlaces.set(key, seen + 1);
-  return toProject(item, item.geocode.lat, item.geocode.lng + seen * 0.00022, seen > 0);
-});
+const snapshotAsOf = snapshot.retrievedAt.slice(0, 10);
+export const publicProjects = projectsFrom(snapshot.packages as GateInput[], snapshotAsOf);
 
-const retrievedLabel = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(snapshot.retrievedAt));
-const mappedCount = publicProjects.filter((project) => project.mappable).length;
-
-export const gateSummary = {
-  retrievedAt: snapshot.retrievedAt,
-  retrievedLabel,
-  fiscalYear: snapshot.fiscalYear,
-  searchUrl: snapshot.source.search.replace("/search", "/index"),
-  accepted: publicProjects.length,
-  mapped: mappedCount,
-  unmapped: publicProjects.length - mappedCount,
-  rejected: rejected.length,
-  cityConstruction: snapshot.counts.konstruksiPemerintahKota,
-  cityApbn: snapshot.counts.konstruksiPemerintahKotaBertandaApbn,
-  located: snapshot.counts.konstruksiBerlokasiSalatiga,
-  pagu: publicProjects.reduce((sum, project) => sum + (project.paguValue || 0), 0),
-  note: `${publicProjects.length} paket konstruksi APBN TA ${snapshot.fiscalYear} berlokasi di Salatiga. ${mappedCount} dipasang dari alamat di pengumuman SIRUP. ${snapshot.counts.konstruksiPemerintahKota} paket Pemkot tercatat APBD, jadi tidak masuk sebagai APBN. Diambil ${retrievedLabel}.`,
+export type GateSummary = {
+  retrievedAt: string;
+  retrievedLabel: string;
+  fiscalYear: number;
+  searchUrl: string;
+  accepted: number;
+  mapped: number;
+  unmapped: number;
+  skippedBukanApbn: number;
+  pagu: number;
+  note: string;
+  source: "snapshot" | "supabase";
 };
+
+function summaryFrom(projects: AdminProject[], retrievedAt: string, fiscalYear: number, skippedBukanApbn: number, source: GateSummary["source"], note: string): GateSummary {
+  const mapped = projects.filter((project) => project.mappable).length;
+  return {
+    retrievedAt,
+    retrievedLabel: new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(retrievedAt)),
+    fiscalYear,
+    searchUrl: "https://sirup.inaproc.id/sirup/caripaketctr/index",
+    accepted: projects.length,
+    mapped,
+    unmapped: projects.length - mapped,
+    skippedBukanApbn,
+    pagu: projects.reduce((sum, project) => sum + (project.paguValue || 0), 0),
+    note,
+    source,
+  };
+}
+
+export function buildLiveSummary(projects: AdminProject[], extra: { retrievedAt: string; fiscalYear: number; skippedBukanApbn: number }): GateSummary {
+  const when = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(extra.retrievedAt));
+  const mapped = projects.filter((project) => project.mappable).length;
+  return summaryFrom(
+    projects,
+    extra.retrievedAt,
+    extra.fiscalYear,
+    extra.skippedBukanApbn,
+    "supabase",
+    `${projects.length} paket konstruksi APBN TA ${extra.fiscalYear} di Jawa Tengah. ${mapped} sudah punya titik dari alamat pengumuman. ${projects.length - mapped} belum bisa dipetakan dan tetap tampil di daftar. ${extra.skippedBukanApbn} paket konstruksi pada unduhan terakhir bukan APBN, jadi tidak disimpan. Diperbarui ${when}.`,
+  );
+}
+
+export const gateSummary = summaryFrom(
+  publicProjects,
+  snapshot.retrievedAt,
+  snapshot.fiscalYear,
+  0,
+  "snapshot",
+  `${publicProjects.length} paket APBN Salatiga dari berkas lokal. Hubungkan Supabase agar data Jawa Tengah diperbarui otomatis tanpa mengubah kode. Realisasi fisik tidak diisi karena SIRUP tidak mengumumkannya.`,
+);

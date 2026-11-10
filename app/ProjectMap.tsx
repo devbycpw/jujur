@@ -8,6 +8,20 @@ function BlankMapClick({ onBlank }: { onBlank: () => void }) {
   useMapEvents({ click: () => onBlank() });
   return null;
 }
+function FitProjects({ projects }: { projects: { lat?: number; lng?: number }[] }) {
+  const map = useMap();
+  const signature = projects.map((project) => project.lat !== undefined && project.lng !== undefined ? `${project.lat.toFixed(4)},${project.lng.toFixed(4)}` : "").join("|");
+  useEffect(() => {
+    const points = projects.filter((project): project is { lat: number; lng: number } => project.lat !== undefined && project.lng !== undefined);
+    if (!points.length) return;
+    if (points.length === 1) {
+      map.setView([points[0].lat, points[0].lng], 13);
+      return;
+    }
+    map.fitBounds(L.latLngBounds(points.map((project) => [project.lat, project.lng])), { padding: [28, 28] });
+  }, [map, signature, projects]);
+  return null;
+}
 function ApplyMapStyle({style}:{style:string}) {
   const map=useMap();
   useEffect(()=>{
@@ -29,8 +43,9 @@ export default function ProjectMap({ projects, selected, onSelect, onBlank, mapS
   const [tilesLoading,setTilesLoading]=useState(true);
   const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-  return <MapContainer className="leaflet-map" center={[-7.333, 110.505]} zoom={13} zoomControl={false} scrollWheelZoom>
+  return <MapContainer className="leaflet-map" center={[-7.15, 110.4]} zoom={8} zoomControl={false} scrollWheelZoom>
     <ApplyMapStyle style={mapStyle}/>
+    <FitProjects projects={projects}/>
     <TileLayer key={mapStyle} className={"map-tiles "+mapStyle} attribution={attribution} url={tileUrl} eventHandlers={{loading:()=>setTilesLoading(true),load:()=>setTilesLoading(false)}} />
     <BlankMapClick onBlank={onBlank} />
     {projects.map((project) => {
