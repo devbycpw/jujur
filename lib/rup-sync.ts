@@ -181,7 +181,8 @@ export async function syncRup(db: SupabaseClient) {
   const runId = runRow.id as number;
 
   try {
-    for (const place of locations) {
+    const places = locations.filter((place) => place.id === "14803");
+    for (const place of places) {
       if (Date.now() - started >= LIST_BUDGET_MS) break;
       const saved = cursors.get(place.id) || { records_filtered: 0, page_start: 0 };
       let start = saved.page_start || 0;
@@ -218,7 +219,7 @@ export async function syncRup(db: SupabaseClient) {
     stats.wrapped = Date.now() - started < LIST_BUDGET_MS;
 
     while (Date.now() - started < DETAIL_BUDGET_MS) {
-    const { data: pending } = await db.from("rup_packages").select("kode_rup,nama").eq("tahun", year).eq("detail_status", "menunggu").limit(20);
+    const { data: pending } = await db.from("rup_packages").select("kode_rup,nama").eq("tahun", year).ilike("lokasi", "%Salatiga%").eq("detail_status", "menunggu").limit(20);
     if (!pending?.length) break;
     for (const item of pending) {
       if (Date.now() - started > DETAIL_BUDGET_MS) break;
@@ -246,7 +247,7 @@ export async function syncRup(db: SupabaseClient) {
     }
     }
 
-    const { data: needsPoint } = await db.from("rup_packages").select("kode_rup,detail_lokasi,nama,geo_attempts").eq("tahun", year).eq("detail_status", "lengkap").is("lat", null).lt("geo_attempts", 2).limit(15);
+    const { data: needsPoint } = await db.from("rup_packages").select("kode_rup,detail_lokasi,nama,geo_attempts").eq("tahun", year).ilike("lokasi", "%Salatiga%").eq("detail_status", "lengkap").is("lat", null).lt("geo_attempts", 2).limit(15);
     for (const item of needsPoint || []) {
       if (Date.now() - started > GEOCODE_BUDGET_MS) break;
       const query = geocodeQuery(item.detail_lokasi || "", item.nama || "");
@@ -370,8 +371,8 @@ async function geocode(query: string) {
     const lng = Number(hit.lon);
     const label = hit.display_name || "";
     const low = label.toLowerCase();
-    const inside = lat <= -6.4 && lat >= -8.08 && lng >= 108.4 && lng <= 111.75;
-    if (inside && low.includes("jawa tengah") && !low.includes("yogyakarta")) return { lat: Number(lat.toFixed(6)), lng: Number(lng.toFixed(6)), label };
+    const inside = lat <= -7.28 && lat >= -7.4 && lng >= 110.46 && lng <= 110.53;
+    if (inside && low.includes("salatiga")) return { lat: Number(lat.toFixed(6)), lng: Number(lng.toFixed(6)), label };
   }
   return null;
 }

@@ -1,5 +1,5 @@
 import { readPackages } from "@/lib/read-packages";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin } from "@/lib/supabase/admin";
 import { syncRup } from "@/lib/rup-sync";
 
 export const dynamic = "force-dynamic";

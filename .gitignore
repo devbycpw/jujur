@@ -1,5 +1,23 @@
+# Dependensi dan hasil build
 node_modules
 .next
+.dist
+out
+*.tsbuildinfo
+
+# Rahasia. .env.example tetap ikut ke repositori.
 .env
 .env.local
 .env*.local
+.vercel
+
+# Perkakas lokal, bukan bagian situs
+.agents
+.cursor
+skills-lock.json
+scripts
+__pycache__
+*.py[cod]
+
+# Sistem
+.DS_Store

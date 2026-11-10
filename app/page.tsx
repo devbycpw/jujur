@@ -8,14 +8,14 @@ import LoginPage from "./LoginPage";
 import AdminDashboard, { AdminProjectDetailActions } from "./AdminDashboard";
 import type { AdminProject } from "./AdminDashboard";
 import ProjectGallery from "./ProjectGallery";
-import { formatCompact, gateSummary, publicProjects } from "./data-gate";
-import { getSupabaseClient } from "@/lib/supabase-client";
+import { formatCompact, gateSummary } from "./data-gate";
+import { getSupabaseClient } from "@/lib/supabase/browser";
 
 const cats = ["Semua","Jalan","Gedung","Lainnya"] as const;
 type Project = AdminProject;
 
 export default function Home() {
- const [projects,setProjects]=useState<AdminProject[]>(publicProjects),[summary,setSummary]=useState(gateSummary),[refreshing,setRefreshing]=useState(false),[selectedId,setSelectedId]=useState(""),[showDetail,setShowDetail]=useState(false),[detailClosing,setDetailClosing]=useState(false),[detailVersion,setDetailVersion]=useState(0),[photoPreview,setPhotoPreview]=useState(""),[photoUpdated,setPhotoUpdated]=useState(""),[mapStyle,setMapStyle]=useState("standard"),[category,setCategory]=useState("Semua"),[query,setQuery]=useState(""),[tab,setTab]=useState("Rincian & Foto"),[watching,setWatching]=useState(false),[notice,setNotice]=useState(""),[welcome,setWelcome]=useState<{title:string;subtitle:string}|null>(null),[zoom,setZoom]=useState(1),[mobileMenu,setMobileMenu]=useState(false),[activeNav,setActiveNav]=useState("Peta Pembangunan"),[page,setPage]=useState("Peta Pembangunan"),[profileOpen,setProfileOpen]=useState(false),[showIdentity,setShowIdentity]=useState(false),[loading,setLoading]=useState(false),[isLoggedIn,setIsLoggedIn]=useState(false),[accountName,setAccountName]=useState("Siti Wulandari"),[role,setRole]=useState<"warga"|"admin">("warga"),[showAuth,setShowAuth]=useState(false),[authMode,setAuthMode]=useState<"signin"|"signup">("signin");
+ const [projects,setProjects]=useState<AdminProject[]>([]),[summary,setSummary]=useState({...gateSummary,accepted:0,mapped:0,unmapped:0,pagu:0,note:"Memuat paket dari Supabase…",source:"supabase" as const}),[refreshing,setRefreshing]=useState(false),[selectedId,setSelectedId]=useState(""),[showDetail,setShowDetail]=useState(false),[detailClosing,setDetailClosing]=useState(false),[detailVersion,setDetailVersion]=useState(0),[photoPreview,setPhotoPreview]=useState(""),[photoUpdated,setPhotoUpdated]=useState(""),[mapStyle,setMapStyle]=useState("standard"),[category,setCategory]=useState("Semua"),[query,setQuery]=useState(""),[tab,setTab]=useState("Rincian & Foto"),[watching,setWatching]=useState(false),[notice,setNotice]=useState(""),[welcome,setWelcome]=useState<{title:string;subtitle:string}|null>(null),[zoom,setZoom]=useState(1),[mobileMenu,setMobileMenu]=useState(false),[activeNav,setActiveNav]=useState("Peta Pembangunan"),[page,setPage]=useState("Peta Pembangunan"),[profileOpen,setProfileOpen]=useState(false),[showIdentity,setShowIdentity]=useState(false),[loading,setLoading]=useState(false),[isLoggedIn,setIsLoggedIn]=useState(false),[accountName,setAccountName]=useState("Siti Wulandari"),[role,setRole]=useState<"warga"|"admin">("warga"),[showAuth,setShowAuth]=useState(false),[authMode,setAuthMode]=useState<"signin"|"signup">("signin");
  useEffect(()=>{setWelcome({title:"Selamat Datang di APERTIO",subtitle:"Lebih Jujur, Lebih Transparan"});const timer=window.setTimeout(()=>setWelcome(null),2000);return()=>window.clearTimeout(timer)},[]);
  
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Home() {
       subscription.unsubscribe();
     };
   }, []);
-  useEffect(()=>{let stop=false;fetch("/api/packages").then(response=>response.json()).then(data=>{if(stop||data.source!=="supabase"||!Array.isArray(data.projects))return;setProjects(data.projects);if(data.summary)setSummary(data.summary)}).catch(()=>{});return()=>{stop=true}},[]);
+  useEffect(()=>{let stop=false;fetch("/api/packages").then(response=>response.json()).then(data=>{if(stop||!Array.isArray(data.projects))return;setProjects(data.projects);if(data.summary)setSummary(data.summary)}).catch(()=>{});return()=>{stop=true}},[]);
  const project:Project=projects.find(p=>p.id===selectedId)??projects[0];
  const filtered=useMemo(()=>projects.filter(p=>(category==="Semua"||p.type===category)&&(p.short+" "+p.title+" "+p.agency).toLowerCase().includes(query.toLowerCase())),[projects,category,query]);
  function toast(s:string){setNotice(s);window.setTimeout(()=>setNotice(""),2500)}

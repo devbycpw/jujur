@@ -43,7 +43,7 @@ export default function ProjectMap({ projects, selected, onSelect, onBlank, mapS
   const [tilesLoading,setTilesLoading]=useState(true);
   const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-  return <MapContainer className="leaflet-map" center={[-7.15, 110.4]} zoom={8} zoomControl={false} scrollWheelZoom>
+  return <MapContainer className="leaflet-map" center={[-7.33, 110.5]} zoom={13} zoomControl={false} scrollWheelZoom>
     <ApplyMapStyle style={mapStyle}/>
     <FitProjects projects={projects}/>
     <TileLayer key={mapStyle} className={"map-tiles "+mapStyle} attribution={attribution} url={tileUrl} eventHandlers={{loading:()=>setTilesLoading(true),load:()=>setTilesLoading(false)}} />

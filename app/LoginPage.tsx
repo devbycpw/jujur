@@ -1,7 +1,7 @@
 "use client";
 import { FormEvent, useState } from "react";
 import { Eye, EyeOff, LockKeyhole, Mail, ShieldCheck, UserRound, X } from "lucide-react";
-import { getSupabaseClient } from "@/lib/supabase-client";
+import { getSupabaseClient } from "@/lib/supabase/browser";
 
 export default function LoginPage({
   mode,

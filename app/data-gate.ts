@@ -1,7 +1,7 @@
 import type { AdminProject } from "./AdminDashboard";
 import snapshot from "../data/public/salatiga-apbn-2026.json";
 
-const BBOX = { south: -8.08, north: -6.4, west: 108.4, east: 111.75 };
+const BBOX = { south: -7.4, north: -7.28, west: 110.46, east: 110.53 };
 
 export type Span = { mulai: string | null; akhir: string | null; teks: string } | null;
 export type GateInput = {
@@ -76,12 +76,12 @@ function accept(item: GateInput) {
   const tempat = item.lokasi.toLowerCase();
   if (!/^\d+$/.test(item.kodeRup)) reasons.push("Kode RUP tidak valid");
   if (!item.sumberDana.some((source) => source.toUpperCase().includes("APBN"))) reasons.push("Sumber dana bukan APBN");
-  if (!tempat.includes("jawa tengah") && !tempat.includes("salatiga")) reasons.push("Lokasi pengumuman di luar Jawa Tengah");
+  if (!tempat.includes("salatiga")) reasons.push("Lokasi pengumuman di luar Kota Salatiga");
   if (!Number.isInteger(item.pagu) || item.pagu <= 0) reasons.push("Pagu tidak valid");
   if (!item.klpd || !item.nama || !item.sumberUrl) reasons.push("Identitas paket tidak lengkap");
   if (item.sumberDanaRinci?.length && item.sumberDanaRinci.every((line) => !line.sumber.toUpperCase().includes("APBN"))) reasons.push("Rincian sumber dana tidak memuat APBN");
   const geo = item.geocode;
-  const precise = geo?.precision === "jalan" || geo?.precision === "objek" || geo?.precision === "alamat";
+  const precise = geo?.precision === "jalan" || geo?.precision === "objek" || geo?.precision === "alamat" || geo?.precision === "wilayah";
   const geoOk = Boolean(geo && precise && labelInJateng(geo.label) && insideJateng(geo.lat, geo.lng));
   return { accepted: reasons.length === 0, reasons, geoOk };
 }
@@ -92,7 +92,9 @@ function toProject(item: GateInput, asOf: string, lat?: number, lng?: number, sh
   const mappable = lat !== undefined && lng !== undefined;
   const placeNote = !mappable
     ? "Alamat pada pengumuman belum cukup untuk dipasang di peta."
-    : geo?.note || "Titik mengikuti alamat yang tertulis di pengumuman SIRUP.";
+    : geo?.precision === "wilayah"
+      ? "Pengumuman hanya menyebut kabupaten atau kota, bukan jalan. Titik berada di wilayah itu."
+      : geo?.note || "Titik mengikuti alamat yang tertulis di pengumuman SIRUP.";
   const shiftNote = shifted ? " Pin digeser sedikit karena ada paket lain pada fasilitas yang sama." : "";
   return {
     id: item.kodeRup,
@@ -183,7 +185,7 @@ export function buildLiveSummary(projects: AdminProject[], extra: { retrievedAt:
     extra.fiscalYear,
     extra.skippedBukanApbn,
     "supabase",
-    `${projects.length} paket konstruksi APBN TA ${extra.fiscalYear} di Jawa Tengah. ${mapped} sudah punya titik dari alamat pengumuman. ${projects.length - mapped} belum bisa dipetakan dan tetap tampil di daftar. ${extra.skippedBukanApbn} paket konstruksi pada unduhan terakhir bukan APBN, jadi tidak disimpan. Diperbarui ${when}.`,
+    `${projects.length} paket konstruksi APBN TA ${extra.fiscalYear} di Kota Salatiga. ${mapped} titik mengikuti alamat pada pengumuman dan berada di dalam kota. ${projects.length - mapped} belum bisa dipetakan. Diperbarui ${when}.`,
   );
 }
 

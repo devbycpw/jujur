@@ -1,6 +1,7 @@
 import { buildLiveSummary, gateSummary, projectsFrom, publicProjects, type GateInput } from "@/app/data-gate";
-import { supabaseRead } from "@/lib/supabase-admin";
+import { supabaseRead } from "@/lib/supabase/admin";
 import { rupYear } from "@/lib/rup-sync";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 type PackageRow = {
   kode_rup: string;
@@ -61,13 +62,34 @@ function toInput(row: PackageRow): GateInput {
   };
 }
 
+async function loadYearRows(db: SupabaseClient) {
+  const rows: PackageRow[] = [];
+  const year = rupYear();
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await db
+      .from("rup_packages")
+      .select("*")
+      .eq("tahun", year)
+      .ilike("lokasi", "%Salatiga%")
+      .order("pagu", { ascending: false })
+      .order("kode_rup", { ascending: true })
+      .range(from, from + 999);
+    if (error) return { error: error.message, rows };
+    const page = (data || []) as PackageRow[];
+    rows.push(...page);
+    if (page.length < 1000) break;
+  }
+  return { error: null, rows };
+}
+
 export async function readPackages() {
   const db = supabaseRead();
   if (!db) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "URL atau kunci Supabase belum terbaca." };
-  const { data, error } = await db.from("rup_packages").select("*").eq("tahun", rupYear()).order("pagu", { ascending: false }).limit(5000);
-  if (error) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: error.message };
-  if (!data?.length) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "Supabase tersambung, tetapi tabel paket masih kosong. Tekan Perbarui data setelah tabel dibuat." };
-  const projects = projectsFrom((data as PackageRow[]).map(toInput), new Date().toISOString().slice(0, 10));
+  const loaded = await loadYearRows(db);
+  if (loaded.error) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: loaded.error };
+  const data = loaded.rows;
+  if (!data.length) return { source: "snapshot" as const, summary: gateSummary, projects: publicProjects, warning: "Supabase tersambung, tetapi tabel paket masih kosong. Tekan Perbarui data setelah tabel dibuat." };
+  const projects = projectsFrom(data.map(toInput), new Date().toISOString().slice(0, 10));
   const { data: runs } = await db.from("sync_runs").select("finished_at,skipped_bukan_apbn").order("id", { ascending: false }).limit(1);
   const latest = runs?.[0];
   const summary = buildLiveSummary(projects, {

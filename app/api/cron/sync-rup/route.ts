@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin } from "@/lib/supabase/admin";
 import { syncRup } from "@/lib/rup-sync";
 
 export const dynamic = "force-dynamic";
@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   }
   const db = supabaseAdmin();
   if (!db) {
-    return Response.json({ error: "SUPABASE_URL dan SUPABASE_SECRET_KEY belum diisi." }, { status: 503 });
+    return Response.json({ error: "NEXT_PUBLIC_SUPABASE_URL dan SUPABASE_SECRET_KEY belum diisi." }, { status: 503 });
   }
   try {
     const result = await syncRup(db);
